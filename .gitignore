@@ -1,0 +1,46 @@
+# -------------------------------------------------
+# Course specific
+# -------------------------------------------------
+public/answer_key/private
+.env
+
+# -------------------------------------------------
+# Example specs from Cypress
+# -------------------------------------------------
+cypress/integration/examples
+cypress/integration/grading
+cypress/fixtures/link_array.json
+cypress/fixtures/test_values.json
+
+# -------------------------------------------------
+# Misc CSS Caching
+# -------------------------------------------------
+.sass-cache/
+*.css.map
+
+# -------------------------------------------------
+# OS generated files
+# -------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# -------------------------------------------------
+# Logs and databases
+# -------------------------------------------------
+logs
+*.log
+npm-debug.log
+
+# -------------------------------------------------
+# Dependency directories
+# Commenting this out is preferred by some people, see
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
+# -------------------------------------------------
+bower_components
+node_modules
+**/*/node_modules
