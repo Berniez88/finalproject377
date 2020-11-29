@@ -1,7 +1,7 @@
 {
-  "name": "inst377-fa2020",
+  "name": "FINALPROJECT377",
   "version": "1.0.0",
-  "description": "Repository for INST377 Dynamic Web Applications Fall 2020 at UMD",
+  "description": "Repository for INST377 team",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -12,7 +12,7 @@
   "engines": {
     "node": "13.x"
   },
-  "author": "Alex Leitch",
+  "author": "Team",
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.0",
