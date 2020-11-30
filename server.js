@@ -21,9 +21,9 @@ app.use((req, res, next) => {
 });
 
 app.route('/api')
-  .get((req, res) => {
+  .get(async(req, res) => {
     console.log('GET request detected');
-    res.send(`Lab 5 for ${process.env.NAME}`);
+    // res.send(`Lab 5 for ${process.env.NAME}`);
   })
   .post(async(req, res) => {
     const data = await fetch("https://api.planetterp.com/v1/courses");
