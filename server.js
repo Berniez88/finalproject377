@@ -26,12 +26,11 @@ app.route('/api')
     res.send(`Lab 5 for ${process.env.NAME}`);
   })
   .post(async(req, res) => {
-    const data = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
+    const data = await fetch("https://api.planetterp.com/v1/courses");
     const json = await data.json();
     res.json(json);
     console.log('POST request detected');
     console.log('fetch request data', data);
-    res.json(countries);
   });
 
 app.listen(port, () => {
