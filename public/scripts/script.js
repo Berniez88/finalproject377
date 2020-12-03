@@ -77,13 +77,6 @@ classbase.push(...data);
             });
         }
 
-        // match semester
-        if (formData.semester !== '') {
-            matchList = matchList.filter(curr => {
-                return curr.course_id === formData.department_input.concat(formData.course_no_input);
-            });
-        }
-
         console.log(matchList);
         return matchList;
 
