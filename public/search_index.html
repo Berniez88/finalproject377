@@ -69,11 +69,13 @@
             aria-describedby="inputGroup-sizing-sm" name="section">
         </div>
         
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Select a Semester</label>
-          <select class="form-control" id="exampleFormControlSelect1" name="semester">
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Semester</span>
+          </div>
+          <select class="form-control" id="exampleFormControlSelect1" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm" name="semester">
             <option>Fall 2020</option>
-            <option>Spring 2021</option>
           </select>
         </div>
 
@@ -85,6 +87,14 @@
         <input type="submit" value="Search">
       </form>
     </div>
+
+
+
+    <!-- search results show up in here -->
+    <div class="search-results">
+
+    </div>
+
   </div>
 
 

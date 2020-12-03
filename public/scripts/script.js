@@ -2,11 +2,11 @@ const grade_letters = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 
 let classbase = [];
 
 
-// process submit form
+// process submit search form
 const form = document.getElementById('class-form');
 form.onsubmit = function (e) {
 
-    
+
     // fetch data from jsons loaded in server.js
     fetch('/api', {
         method: 'POST',
@@ -20,7 +20,7 @@ form.onsubmit = function (e) {
             console.log(err);
         });
 
-    console.log(classbase);
+    // console.log(classbase);
 
 
 
@@ -54,7 +54,12 @@ form.onsubmit = function (e) {
 
 
     // for each class in list of matching classes, generate html in results page.
-
+    $('.search-results').empty();
+    $('.search-results').append(`
+        <p>
+            ${form.department.value}, ${form.course.value}
+        </p>
+    `);
 
 
 
