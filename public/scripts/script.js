@@ -3,21 +3,32 @@ let classbase = [];
 let profgradesbase = [];
 
 
+
+// Fetch class data from UMD.io into classbase
+getData();
+async function getData() {
+    const response = await fetch("https://raw.githubusercontent.com/umdio/umdio-data/master/courses/data/202008.json");
+    const data = await response.json();
+    classbase.push(...data);
+}
+
+console.log(classbase);
+
+
 // process submit search form
 const form = document.getElementById('class-form');
 form.onsubmit = function (e) {
     e.preventDefault();
 
 
+    // consolidate form data into one object, remove empty data
+    const formData = {
+        "department_input": form.department.value,
+        "course_no_input": form.course.value,
+        "section_input": form.section.value,
+        "semester_input": form.semester.value
+    };
 
-    console.log('dept:', form.department.value);
-    console.log('course:', form.course.value);
-    console.log('sec:', form.section.value);
-    console.log('sem:', form.semester.value);
-
-    // consolidate form data into one array, remove empty data
-    const formData = [form.department.value, form.course.value, form.section.value, form.semester.value].filter(e => e !== "");
-    console.log('form data array pls wrk', formData);
 
 
 
@@ -37,22 +48,11 @@ form.onsubmit = function (e) {
 
 
     // Get data for classes
-    getData();
-
-    async function getData() {
-        const response = await fetch("https://raw.githubusercontent.com/umdio/umdio-data/master/courses/data/202008.json");
-        const data = await response.json();
-        classbase.push(...data);
-    }
-
     /*async function getProfessorGradesData() {
-        const response = await fetch("https://api.planetterp.com/v1/grades?course=".concat(course));
-        const data = await response.json();
-        classbase.push(...data);
-    }*/
-
-
-    console.log(profgradesbase);
+const response = await fetch("https://api.planetterp.com/v1/grades?course=".concat(course));
+const data = await response.json();
+classbase.push(...data);
+}*/
 
 
 
@@ -62,18 +62,61 @@ form.onsubmit = function (e) {
     // for each form data, search for matches in classbase. only add unique classes.
     // Return: list of matching classes
 
+    function findMatches(formData) {
+        let matchList = [];
+        // match dept
+        if (formData.department_input !== '') {
+            matchList = classbase.filter(curr => {
+                return curr.dept_id === formData.department_input;
+            });
+        }
+        // match course no
+        if (formData.course_no_input !== '') {
+            matchList = matchList.filter(curr => {
+                return curr.course_id === formData.department_input.concat(formData.course_no_input);
+            });
+        }
+
+        // match semester
+        if (formData.semester !== '') {
+            matchList = matchList.filter(curr => {
+                return curr.course_id === formData.department_input.concat(formData.course_no_input);
+            });
+        }
+
+        console.log(matchList);
+        return matchList;
 
 
+
+    }
+
+
+
+
+    // for each form data, search for matches in profgradesbase. only add unique class.
+    // Return: list of matching class
 
 
     // for each class in list of matching classes, generate html in results page.
     $('.search-results').empty();
-    $('.search-results').append(`
-        <p>
-            ${form.department.value}, ${form.course.value}
-        </p>
-    `);
 
+    const matchList = findMatches(formData);
 
+    const html = matchList.map(curr => {
 
-};
+        return `
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">${curr.course_id}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">${curr.semester}</h6>
+          <p class="card-text"> ${curr.description}<br></p>
+          <a href="#" class="card-link">Card link</a>
+        </div>
+      </div>
+        `;
+    }).join('');
+
+    $('.search-results').append(html);
+
+}
