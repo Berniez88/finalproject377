@@ -1,3 +1,6 @@
+let classbase = [];
+let profgradesbase = [];
+
 function gpa_calc() {
     let gpa = 0;
     let num_c = 0;
