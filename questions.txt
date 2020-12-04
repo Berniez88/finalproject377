@@ -1,0 +1,2 @@
+passing course to fetch in server
+How many filters do we need to get a good score?

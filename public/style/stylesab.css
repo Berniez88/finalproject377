@@ -1,0 +1,31 @@
+.skin {
+    padding: 10px;
+}
+
+.eyes {
+    padding: 10px;
+}
+
+h1 {
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.card {
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+.myguys_toes {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
