@@ -1,27 +1,33 @@
-h1{
-    color: blue;
+h1 {
+    color: aqua;
     font-size: 30px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
 
-.balls {
+.header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Kawaii_earth_clipart.svg/1024px-Kawaii_earth_clipart.svg.png');
+    background-position:center;
+    background-size: 200px;
+    background-repeat: no-repeat;
+    padding-bottom: 130px;
 }
-
 
 form, nav{
-    padding: 4px 40px;
+    padding: 0 40px;
 }
 
-.myguys_toes {
+.footer {
     position: absolute;
     bottom: 0;
-    padding: 4px 100px;
+    padding: 4px auto;
     margin: 0 auto;
 }
 
 html, body {
-    padding: 50px 40px;
+    padding: 30px 40px;
 }
