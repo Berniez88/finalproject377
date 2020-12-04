@@ -1,0 +1,39 @@
+.wrapper {
+    padding: 10px;
+}
+
+.header {
+    padding: 10px;
+}
+
+h1 {
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+img {
+   padding: 5px;
+   margin-left: 130px;
+}
+
+.input-group {
+    padding-top: 10px;
+    padding-right: 1160px;
+}
+
+.tab-content {
+    display: flex;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
