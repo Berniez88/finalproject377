@@ -130,7 +130,13 @@ form.onsubmit = function (e) {
         });
 
 
-
+        // discription null check
+        let description = '';
+        if (curr.description === null) {
+            description = 'No description';
+        } else {
+            description = curr.description;
+        }
 
 
 // return full html
@@ -139,10 +145,9 @@ form.onsubmit = function (e) {
         <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">${curr.course_id}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">${curr.semester} Fall 2020</h6>
-            <p class="card-text">${curr.description}<br></p>
+            <h6 class="card-subtitle mb-2 text-muted">Fall 2020</h6>
+            <p class="card-text">${description}<br></p>
             
-          
           
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal${curr.course_id}">
@@ -161,7 +166,7 @@ form.onsubmit = function (e) {
                         </div>
                         <div class="modal-body">
                             <span><strong>Description:</strong></span>
-                            <p>${curr.description}</p>
+                            <p>${description}</p>
 
                             <div class ="course-sections">
                                 ${sectionsHTML}
