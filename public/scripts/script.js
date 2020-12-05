@@ -24,7 +24,11 @@ async function getData() {
     classbase.push(...data);
 }
 
-console.log(classbase);
+
+
+
+
+
 
 
 // process submit search form
@@ -32,16 +36,13 @@ const form = document.getElementById('class-form');
 form.onsubmit = function (e) {
     e.preventDefault();
 
-
     // consolidate form data into one object, remove empty data
     const formData = {
-        "department_input": form.department.value,
+        "department_input": form.department.value.toUpperCase(),
         "course_no_input": form.course.value,
         "section_input": form.section.value,
         "semester_input": form.semester.value
     };
-
-
 
 
 
@@ -59,21 +60,11 @@ form.onsubmit = function (e) {
         });
 
 
-    // Get data for classes
-    /*async function getProfessorGradesData() {
-const response = await fetch("https://api.planetterp.com/v1/grades?course=".concat(course));
-const data = await response.json();
-classbase.push(...data);
-}*/
-
-
-
 
 
 
     // for each form data, search for matches in classbase. only add unique classes.
     // Return: list of matching classes
-
     function findMatches(formData) {
         let matchList = [];
         // match dept
@@ -81,16 +72,14 @@ classbase.push(...data);
             return curr.dept_id === formData.department_input;
         });
 
-        // match course no
+        // match course number
         if (formData.course_no_input !== '') {
             matchList = matchList.filter(curr => {
                 return curr.course_id === formData.department_input.concat(formData.course_no_input);
             });
         }
-
         console.log(matchList);
         return matchList;
-
     }
 
 
@@ -104,6 +93,47 @@ classbase.push(...data);
     $('.search-results').empty();
     const matchList = findMatches(formData);
     const html = matchList.map(curr => {
+
+// get sections
+        const sections = curr.sections;
+        console.log(sections);
+        
+        let sectionsHTML = ``;
+
+        sections.forEach(section => {
+           
+            // get meetings
+            const meetings = section.meetings;
+            let meetingsHTML = `Meetings: <br>`;
+            meetings.forEach(meeting => {
+                meetingsHTML += `
+                Lecture ${meeting.classtype}:
+                    <ul>
+                        <li>days: ${meeting.days}</li>
+                        <li>time: ${meeting.start_time} - ${meeting.end_time}</li>
+                        <li>Room: ${meeting.building} ${meeting.room}</li>
+                    </ul>
+                `;
+            });
+
+            // update sectionsHTML
+            sectionsHTML += `
+            <ul>
+                <li>Instructor: ${section.instructors}</li>
+                <li>Section Number: ${section.number}</li>
+                <li>Seats: ${section.seats}</li>
+                <li>Open Seats: ${section.open_seats}</li>
+                <li>Waitlist: ${section.waitlist}</li>
+                <li>${meetingsHTML}</li>
+            </ul>
+            `;
+        });
+
+
+
+
+
+// return full html
 
         return `
         <div class="card" style="width: 18rem;">
@@ -132,18 +162,19 @@ classbase.push(...data);
                         <div class="modal-body">
                             <span><strong>Description:</strong></span>
                             <p>${curr.description}</p>
+
+                            <div class ="course-sections">
+                                ${sectionsHTML}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
          
-
-          
         </div>
       </div>
         `;
     }).join('');
 
     $('.search-results').append(html);
-
 }
