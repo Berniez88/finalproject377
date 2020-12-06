@@ -16,6 +16,7 @@ h1 {
 
 .card {
     padding: 10px;
+    margin: 100px;
     align-items: center;
     justify-content: center;
     display: flex;
