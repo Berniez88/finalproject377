@@ -2,7 +2,7 @@
     padding: 10px;
 }
 
-.eyes {
+.upper_limbs {
     padding: 10px;
 }
 
@@ -14,16 +14,16 @@ h1 {
     flex-direction: row;
 }
 
-.card {
+.torso {
     padding: 10px;
-    margin: 100px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
 }
-.myguys_toes {
-    position: fixed;
+
+.index {
+    padding: 10px;
+}
+
+.footer {
+    /*position: fixed;*/
     left: 0;
     bottom: 0;
     width: 100%;
