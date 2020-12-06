@@ -1,5 +1,4 @@
 let classbase = [];
-let profgradesbase = [];
 
 function gpa_calc() {
     let gpa = 0;
@@ -15,6 +14,9 @@ function gpa_calc() {
     };
     return gpa / num_c;
 }
+
+
+
 
 // Fetch class data from UMD.io into classbase
 getData();
