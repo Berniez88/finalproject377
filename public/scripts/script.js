@@ -1,4 +1,3 @@
-import './gpa.js';
 
 let classbase = [];
 
