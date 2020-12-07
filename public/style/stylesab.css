@@ -1,8 +1,8 @@
-.skin {
+.wrapper {
     padding: 10px;
 }
 
-.eyes {
+.header {
     padding: 10px;
 }
 
@@ -22,11 +22,32 @@ h1 {
     display: flex;
     flex-direction: row;
 }
-.myguys_toes {
-    position: fixed;
+.footer {
     left: 0;
     bottom: 0;
     width: 100%;
     text-align: center;
     padding: 20px;
+}
+
+@media screen and (max-width: 960px)
+{
+    .container {
+        justify-content: center;
+        flex: 1 0 auto;
+        margin-right: 0px;
+    }
+    h1 {
+        text-align:center;
+    }
+}
+@media screen and (max-width: 1000px)
+{
+    .container{
+        justify-content: center;
+        margin-right: 0px;
+    }
+    h1 {
+        text-align:center;
+    }
 }
