@@ -1,8 +1,24 @@
+// Parameters: array of objects from API (profgradesbase)
+// calculate course averages for each professor and place in array
+// generate html for avg grades and add html to page for each class
+// return: no return
+function calcCourseAvgs(profgradesbase) {
+    profgradesbase.forEach(course => {
+        console.log("if this doesnt work (╯°□°)╯︵ ┻━┻");
+    });
+
+
+
+
+
+
+}
+
+
+
+
 // Get average GPA of the course
 async function getGPA(course) {
-    console.log(course);
-    let courseAvg = 4.0;
-    let professorAvgs = { "Alex": 4.0 };
     const courseObj = { "course": course };
 
     try {
@@ -19,9 +35,8 @@ async function getGPA(course) {
         const profgradesbase = await data.json();
         console.log(profgradesbase);
 
-        const html = "lasdkfjlaskfjldkfjalskfjalskfjalkfjlasdkfjlaskfjaj"
+        calcCourseAvgs(profgradesbase);
 
-        $(`.modal-body`).append(html);
 
         return profgradesbase;
 

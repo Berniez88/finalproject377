@@ -27,7 +27,6 @@ app.route('/api')
   })
   .post(async(req, res) => {
     console.log('server req:', req.body.course);
-    //const data = await fetch("https://api.planetterp.com/v1/grades?course=INST377");
     const toFetch = "https://api.planetterp.com/v1/grades?course=".concat(req.body.course);
     const data = await fetch(toFetch);
     const json = await data.json();
