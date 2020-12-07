@@ -124,7 +124,8 @@ form.onsubmit = function (e) {
 // return full html
 
         return `
-        <div class="card" style="width: 18rem;">
+        <div class="col mb-4">
+        <div class="card">
         <div class="card-body">
             <h5 class="card-title">${curr.course_id}</h5>
             <h6 class="card-subtitle mb-2 text-muted">Fall 2020</h6>
@@ -159,6 +160,7 @@ form.onsubmit = function (e) {
             </div>
          
         </div>
+      </div>
       </div>
         `;
     }).join('');
