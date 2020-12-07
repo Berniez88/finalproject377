@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 async function getGPA(courseObj) {
     let courseAvg = 4.0;
     let professorAvgs = { "Alex": 4.0 }
