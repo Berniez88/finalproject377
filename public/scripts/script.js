@@ -1,4 +1,4 @@
-import './gpa.js';
+
 
 let classbase = [];
 
@@ -11,12 +11,6 @@ async function getData() {
     const data = await response.json();
     classbase.push(...data);
 }
-
-
-
-
-
-
 
 
 // process submit search form
