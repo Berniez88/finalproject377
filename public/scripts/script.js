@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> a9645364a520f27119f28f6240eba043f14258b1
 
 let classbase = [];
 
@@ -10,12 +14,6 @@ async function getData() {
     const data = await response.json();
     classbase.push(...data);
 }
-
-
-
-
-
-
 
 
 // process submit search form
@@ -129,7 +127,8 @@ form.onsubmit = function (e) {
 // return full html
 
         return `
-        <div class="card" style="width: 18rem;">
+        <div class="col mb-4">
+        <div class="card">
         <div class="card-body">
             <h5 class="card-title">${curr.course_id}</h5>
             <h6 class="card-subtitle mb-2 text-muted">Fall 2020</h6>
@@ -164,6 +163,7 @@ form.onsubmit = function (e) {
             </div>
          
         </div>
+      </div>
       </div>
         `;
     }).join('');
