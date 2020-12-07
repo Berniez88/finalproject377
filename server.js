@@ -26,7 +26,9 @@ app.route('/api')
     // res.send(`Lab 5 for ${process.env.NAME}`);
   })
   .post(async(req, res) => {
+    console.log('server req:', req.body);
     const data = await fetch("https://api.planetterp.com/v1/grades?course=INST377");
+    //const data = await fetch("https://api.planetterp.com/v1/grades?course=".concat(course));
     const json = await data.json();
     res.json(json);
     console.log('POST request detected');

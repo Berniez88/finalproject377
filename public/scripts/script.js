@@ -1,97 +1,99 @@
 <<<<<<< HEAD
-=======
+async function getGPA(courseObj) {
+    let courseAvg = 4.0;
+    let professorAvgs = { "Alex": 4.0 }
 
->>>>>>> a9645364a520f27119f28f6240eba043f14258b1
+    try {
+      // fetch data from api. api -> json -> array
+      const data = await fetch('/api', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(courseObj)
 
-let classbase = [];
+      });
+  
+    const profgradesbase = await data.json();
+    return profgradesbase;
 
-
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
 // Fetch class data from UMD.io into classbase
 getData();
 async function getData() {
-    const response = await fetch("https://raw.githubusercontent.com/umdio/umdio-data/master/courses/data/202008.json");
-    const data = await response.json();
-    classbase.push(...data);
-}
-
-
-// process submit search form
-const form = document.getElementById('class-form');
-form.onsubmit = function (e) {
-    e.preventDefault();
-
-    // consolidate form data into one object, remove empty data
-    const formData = {
-        "department_input": form.department.value.toUpperCase(),
-        "course_no_input": form.course.value,
-        "section_input": form.section.value,
-        "semester_input": form.semester.value
-    };
-
-
-
-    // Get data for class grades
-    fetch('/api', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-        .then((fromServer) => fromServer.json())
-        .then((jsonFromServer) => profgradesbase.push(...jsonFromServer))
-        .catch((err) => {
-            console.log(err);
-        });
+    const data = await fetch("https://raw.githubusercontent.com/umdio/umdio-data/master/courses/data/202008.json");
+    const classbase = await data.json();
 
 
 
 
 
-    // for each form data, search for matches in classbase. only add unique classes.
-    // Return: list of matching classes
-    function findMatches(formData) {
-        let matchList = [];
-        // match dept
-        matchList = classbase.filter(curr => {
-            return curr.dept_id === formData.department_input;
-        });
+    // process submit search form
+    const form = document.getElementById('class-form');
+    form.onsubmit = async function (e) {
+        e.preventDefault();
 
-        // match course number
-        if (formData.course_no_input !== '') {
-            matchList = matchList.filter(curr => {
-                return curr.course_id === formData.department_input.concat(formData.course_no_input);
+        // consolidate form data into one object, remove empty data
+        const formData = {
+            "department_input": form.department.value.toUpperCase(),
+            "course_no_input": form.course.value,
+            "section_input": form.section.value,
+            "semester_input": form.semester.value
+        };
+
+
+        const courseGPA = await getGPA(formData);
+        console.log('courseGPA', courseGPA);
+
+
+        // for each form data, search for matches in classbase. only add unique classes.
+        // Return: list of matching classes
+        function findMatches(formData) {
+            let matchList = [];
+            // match dept
+            matchList = classbase.filter(curr => {
+                return curr.dept_id === formData.department_input;
             });
+
+            // match course number
+            if (formData.course_no_input !== '') {
+                matchList = matchList.filter(curr => {
+                    return curr.course_id === formData.department_input.concat(formData.course_no_input);
+                });
+            }
+            //console.log(matchList);
+            return matchList;
         }
-        console.log(matchList);
-        return matchList;
-    }
 
 
 
 
-    // for each form data, search for matches in profgradesbase. only add unique class.
-    // Return: list of matching class
+        // for each form data, search for matches in profgradesbase. only add unique class.
+        // Return: list of matching class
 
 
-    // for each class in list of matching classes, generate html in results page.
-    $('.search-results').empty();
-    const matchList = findMatches(formData);
-    const html = matchList.map(curr => {
+        // for each class in list of matching classes, generate html in results page.
+        $('.search-results').empty();
+        const matchList = findMatches(formData);
+        const html = matchList.map(curr => {
 
-// get sections
-        const sections = curr.sections;
-        console.log(sections);
-        
-        let sectionsHTML = ``;
+            // get sections
+            const sections = curr.sections;
+            //console.log(sections);
 
-        sections.forEach(section => {
-           
-            // get meetings
-            const meetings = section.meetings;
-            let meetingsHTML = `Meetings: <br>`;
-            meetings.forEach(meeting => {
-                meetingsHTML += `
+            let sectionsHTML = ``;
+
+            sections.forEach(section => {
+
+                // get meetings
+                const meetings = section.meetings;
+                let meetingsHTML = `Meetings: <br>`;
+                meetings.forEach(meeting => {
+                    meetingsHTML += `
                 Lecture ${meeting.classtype}:
                     <ul>
                         <li>days: ${meeting.days}</li>
@@ -99,10 +101,10 @@ form.onsubmit = function (e) {
                         <li>Room: ${meeting.building} ${meeting.room}</li>
                     </ul>
                 `;
-            });
+                });
 
-            // update sectionsHTML
-            sectionsHTML += `
+                // update sectionsHTML
+                sectionsHTML += `
             <ul>
                 <li>Instructor: ${section.instructors}</li>
                 <li>Section Number: ${section.number}</li>
@@ -112,21 +114,21 @@ form.onsubmit = function (e) {
                 <li>${meetingsHTML}</li>
             </ul>
             `;
-        });
+            });
 
 
-        // discription null check
-        let description = '';
-        if (curr.description === null) {
-            description = 'No description';
-        } else {
-            description = curr.description;
-        }
+            // discription null check
+            let description = '';
+            if (curr.description === null) {
+                description = 'No description';
+            } else {
+                description = curr.description;
+            }
 
 
-// return full html
+            // return full html
 
-        return `
+            return `
         <div class="col mb-4">
         <div class="card">
         <div class="card-body">
@@ -166,7 +168,12 @@ form.onsubmit = function (e) {
       </div>
       </div>
         `;
-    }).join('');
+        }).join('');
 
-    $('.search-results').append(html);
+        $('.search-results').append(html);
+    }
+
+
+
+
 }

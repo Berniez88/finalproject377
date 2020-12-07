@@ -1,6 +1,2 @@
-passing course to fetch in server
-How many filters do we need to get a good score?
-for loop
-how to do cards 
+how to do cards
 media screens bootstraps
-search index card grid
