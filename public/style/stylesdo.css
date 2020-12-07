@@ -19,17 +19,11 @@ img {
    margin-left: 130px;
 }
 
-.input-group {
-    padding-top: 10px;
-    padding-right: 1160px;
-}
-
 .tab-content {
     display: flex;
 }
 
 .footer {
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -37,3 +31,28 @@ img {
     padding: 20px;
 }
 
+@media screen and (max-width: 500px)
+{
+    .container {
+        justify-content: center;
+        flex: 1 0 auto;
+        margin-right: 0px;
+    }
+    h1 {
+        text-align:center;
+    }
+    .tab-content{
+        padding-left:30px;
+    }
+}
+
+@media screen and (max-width: 1000px)
+{
+    .container{
+        justify-content: center;
+        margin-right: 0px;
+    }
+    h1 {
+        text-align:center;
+    }
+}
