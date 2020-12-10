@@ -61,10 +61,6 @@ async function getGPA(course) {
     }
 }
 
-
-
-
-
 // Fetch class data from UMD.io into classbase
 getClasses();
 async function getClasses() {
