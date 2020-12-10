@@ -19,7 +19,7 @@ h1 {
 }
 
 nav{
-    padding: 0 40px;
+    padding-top: 30px;
 }
 
 .footer {
@@ -33,6 +33,10 @@ nav{
 
 html, body {
     padding: 30px 40px;
+}
+
+body {
+    padding-top: 80px;
 }
 
 @media screen and (max-width: 960px)
