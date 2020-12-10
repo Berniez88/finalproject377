@@ -38,3 +38,19 @@ app.route('/api')
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
 });
+
+app.route('/profapi')
+  .get(async(req, res) => {
+    console.log('GET request detected');
+    // res.send(`Lab 5 for ${process.env.NAME}`);
+  })
+  .post(async(req, res) => {
+    console.log('server req:', req.body.name);
+    const name = req.body.name.split(' ')
+    const toFetch = "https://api.planetterp.com/v1/professor?name=".concat(name[0],'%20',name[1]);
+    const data = await fetch(toFetch);
+    const json = await data.json();
+    res.json(json);
+    console.log('POST request detected');
+    console.log('fetch request data', data);
+  });
