@@ -50,7 +50,7 @@ async function getGPA(course) {
 
         $(`.modal-temp`).empty()
 
-        const html = `<h3>Average GPA: ${course_avg}</h3>`;
+        const html = `<h3 class="average-gpa-text">Average GPA: ${course_avg}</h3>`;
 
         $(`.modal-temp`).prepend(html);
 
