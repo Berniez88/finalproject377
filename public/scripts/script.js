@@ -2,28 +2,63 @@
 // calculate course averages for each professor and place in array
 // generate html for avg grades and add html to page for each class
 // return: no return
-function calcCourseAvgs(profgradesbase) {
+function calcCourseAvg(profgradesbase) {
+    let gpa = 0;
+    let num_c = 0;
+    const gradesobj = { 'A+': 4, 'A': 4, 'A-': 3.7, 'B+': 3.3, 'B': 3, 'B-': 2.7, 'C+': 2.3, 'C': 2, 'C-': 1.7, 'D+': 1.3, 'D': 1, 'D-': 0.7, 'F': 0 };
+    profgradesbase.forEach(object => {
+        for (const grade in object) {
+            if (gradesobj.hasOwnProperty(grade)) {
+                gpa += (gradesobj[grade] * object[grade]);
+                num_c += (1 * object[grade]);
+            };
+        };
+    });
+
+    const course_avg = gpa / num_c;
+
+    if (Number.isNaN(course_avg)) {
+        return "No grade data"
+    };
+
+    return course_avg.toFixed(2);
+};
+
+
+
+/*function calcProfAvgs(profgradesbase) {
+    let profNames = [];
+    let profGPA = [];
+    let counter = [];
+
+
+    const gradesobj = { 'A+': 4, 'A': 4, 'A-': 3.7, 'B+': 3.3, 'B': 3, 'B-': 2.7, 'C+': 2.3, 'C': 2, 'C-': 1.7, 'D+': 1.3, 'D': 1, 'D-': 0.7, 'F': 0 };
+    profgradesbase.forEach(object => {
         let gpa = 0;
-        let num_c = 0;
-        const gradesobj = { 'A+': 4, 'A': 4, 'A-': 3.7, 'B+': 3.3, 'B': 3, 'B-': 2.7, 'C+': 2.3, 'C': 2, 'C-': 1.7, 'D+': 1.3, 'D': 1, 'D-': 0.7, 'F': 0};
-        profgradesbase.forEach(object => {
-            for (const grade in object) {
-                if (gradesobj.hasOwnProperty(grade)) {
-                  gpa += (gradesobj[grade] * object[grade]);
-                  num_c += (1 * object[grade]);
-                  console.log(grade)
-                };
-              };
-            });
-        
-        const course_avg = gpa / num_c;
-
-        if(Number.isNaN(course_avg)) {
-            return "No grade data"
+        for (const grade in object) {
+            if (gradesobj.hasOwnProperty(grade)) {
+                gpa += (gradesobj[grade] * object[grade]);
+            };
         };
 
-        return course_avg.toFixed(2);
-        };
+        if (!profNames.includes(object.professor)) {
+            profNames.push(object.professor);
+            profGPA.push(gpa);
+            counter.push(1);
+        } else {
+            const profIndex = profNames.indexOf(object.professor);
+            profGPA[profIndex] += gpa;
+            counter[profIndex] += 1;
+        }
+
+        console.log(profGPA);
+        console.log(profNames);
+
+    });
+
+
+    return profGPA;
+};*/
 
 
 // Get average GPA of the course
@@ -44,9 +79,7 @@ async function getGPA(course) {
         const profgradesbase = await data.json();
         console.log(profgradesbase);
 
-        console.log(course);
-
-        const course_avg = calcCourseAvgs(profgradesbase);
+        const course_avg = calcCourseAvg(profgradesbase);
 
         $(`.modal-temp`).empty()
 
@@ -167,7 +200,7 @@ async function getClasses() {
         <div class="col mb-4">
         <div class="card">
         <div class="card-body">
-            <h5 class="card-title">${curr.course_id}</h5>
+            <h5 class="card-title">${curr.course_id} - ${curr.name}</h5>
             <h6 class="card-subtitle mb-2 text-muted">Fall 2020</h6>
             <p class="card-text">${description}<br></p>
             

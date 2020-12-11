@@ -21,11 +21,12 @@ app.use((req, res, next) => {
 });
 
 app.route('/api')
-  .get(async(req, res) => {
+  .get(async (req, res) => {
     console.log('GET request detected');
-    // res.send(`Lab 5 for ${process.env.NAME}`);
+    console.log('Get:', req.query);
+    res.send('/api route');
   })
-  .post(async(req, res) => {
+  .post(async (req, res) => {
     console.log('server req:', req.body.course);
     const toFetch = "https://api.planetterp.com/v1/grades?course=".concat(req.body.course);
     const data = await fetch(toFetch);
@@ -33,27 +34,38 @@ app.route('/api')
     res.json(json);
     console.log('POST request detected');
     console.log('fetch request data', data);
+  })
+  .put(async (req, res) => {
+    console.log('PUT request detected');
+    res.send('No Data to update.');
   });
 
 
 
-  app.route('/profapi')
-  .get(async(req, res) => {
+app.route('/profapi')
+  .get(async (req, res) => {
     console.log('GET request detected');
-    // res.send(`Lab 5 for ${process.env.NAME}`);
+    console.log('Query:', req.query);
+    res.send('/profapi route');
   })
-  .post(async(req, res) => {
+  .post(async (req, res) => {
     const fullName = req.body.profName;
     console.log(fullName);
     const nameArr = await fullName.split(' ');
     console.log(nameArr);
-    const toFetch = "https://api.planetterp.com/v1/professor?name=".concat(nameArr[0],'%20',nameArr[1],'&reviews=true');
+    const toFetch = "https://api.planetterp.com/v1/professor?name=".concat(nameArr[0], '%20', nameArr[1], '&reviews=true');
     const data = await fetch(toFetch);
     const json = await data.json();
     res.json(json);
     console.log('POST request detected');
     console.log('fetch request data', data);
+  })
+  .put(async (req, res) => {
+    console.log('PUT request detected');
+    res.send('No Data to update.');
   });
+
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);

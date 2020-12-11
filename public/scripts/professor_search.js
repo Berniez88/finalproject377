@@ -55,7 +55,8 @@ document.body.addEventListener('submit', async (e) => {
                 }
 
 
-                return `        
+                return `       
+                <div class="col mb-4">
                 <div class="card review">
                     <div class="card-body">
                         <h5 class="card-title">Rating: ${rating}/5</h5>
@@ -66,6 +67,7 @@ document.body.addEventListener('submit', async (e) => {
                         <h5>Review: </h5>
                         <p class="card-text">${review}<br></p>
                     </div>
+                </div>
                 </div>
                 `;
             }).join('');

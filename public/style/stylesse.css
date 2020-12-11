@@ -32,4 +32,8 @@ h1 {
 }
 
 
-
+/*******/
+.average-gpa-text {
+    text-align: right;
+    margin-right: 20px;
+}
