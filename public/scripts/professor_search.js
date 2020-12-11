@@ -30,17 +30,41 @@ document.body.addEventListener('submit', async (e) => {
                     course = curr.course;
                 }
 
+                // expected_grade null check
+                let expected_grade = "";
+                if (curr.expected_grade == null) {
+                    expected_grade = "N/A";
+                } else {
+                    expected_grade = curr.expected_grade;
+                }
+
+                // rating null check
+                let rating = "";
+                if (curr.rating == null) {
+                    rating = "N/A";
+                } else {
+                    rating = curr.rating;
+                }
+
+                // review null check
+                let review = "";
+                if (curr.review == null) {
+                    review = "N/A";
+                } else {
+                    review = curr.review;
+                }
+
 
                 return `        
                 <div class="card review">
                     <div class="card-body">
-                        <h5 class="card-title">Rating: ${curr.rating}/5</h5>
+                        <h5 class="card-title">Rating: ${rating}/5</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Course: ${course}</h6>
-                        <h6 class="card-subtitle mb-2 text-muted">Expected Grade: ${curr.expected_grade}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Expected Grade: ${expected_grade}</h6>
                         <h6 class="card-subtitle mb-2 text-muted">Date: ${time}</h6>
                         <hr>
                         <h5>Review: </h5>
-                        <p class="card-text">${curr.review}<br></p>
+                        <p class="card-text">${review}<br></p>
                     </div>
                 </div>
                 `;
