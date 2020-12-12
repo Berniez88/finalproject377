@@ -18,19 +18,10 @@ img {
    padding-left: 10px;
 }
 
-.flex-column {
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    width: 100%;
-    padding-left: 20px;
-}
-
-.row p {
-    margin-left: 150px;
+.card {
+    padding: 100px;
+    padding-right: 400px;
+    margin-left: 50px;
 }
 
 .footer {
