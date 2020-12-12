@@ -2,12 +2,18 @@
     padding: 10px;
 }
 
+body {
+    background-color: #AEB4A9 !important;
+}
+
 .header {
-    padding: 10px;
+    padding: 20px;
+    -webkit-text-stroke-width: .25px;
+    -webkit-text-stroke-color: black;
 }
 
 h1 {
-    padding: 10px;
+    padding-top: 60px;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -16,21 +22,22 @@ h1 {
 
 .card {
     padding: 10px;
-    margin: 100px;
+    margin: 30px;
     align-items: center;
     justify-content: center;
     display: flex;
     flex-direction: row;
 }
+
 .footer {
     left: 0;
     bottom: 0;
     width: 100%;
     text-align: center;
-    padding: 20px;
+    padding:40px;
 }
 
-@media screen and (max-width: 960px)
+@media screen and (max-width: 500px)
 {
     .container {
         justify-content: center;
@@ -41,7 +48,7 @@ h1 {
         text-align:center;
     }
 }
-@media screen and (max-width: 1000px)
+@media screen and (max-width: 1280px)
 {
     .container{
         justify-content: center;
