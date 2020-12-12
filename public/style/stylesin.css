@@ -4,6 +4,7 @@ h1 {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
     text-align:center;
+    padding-bottom:50px;
 }
 
 .header {
@@ -19,7 +20,9 @@ h1 {
 }
 
 nav{
-    padding-top: 30px;
+    padding-top: 50px;
+    -webkit-text-stroke-width: .2px;
+    -webkit-text-stroke-color: black;
 }
 
 .footer {
@@ -32,19 +35,25 @@ nav{
 }
 
 html, body {
-    padding: 30px 40px;
+    padding: 40px;
 }
+
 
 body {
     padding-top: 80px;
+    background-color: #AEB4A9 !important;
 }
 
-@media screen and (max-width: 960px)
+@media screen and (max-width: 1281px)
 {
     .container {
         justify-content: center;
         flex: 1 0 auto;
         margin-right: 0px;
+    }
+    .header{
+        background-position:bottom;
+        height:inherit;
     }
     h1 {
         text-align:center;
@@ -53,7 +62,7 @@ body {
         padding:0px
     }
 }
-@media screen and (max-width: 1000px)
+@media screen and (max-width: 500px)
 {
     .container{
         justify-content: center;
@@ -64,5 +73,17 @@ body {
     }
     form {
         padding:0px
+    }
+    nav{
+    padding-top: inherit;
+    }
+
+    .header{
+        background-position:bottom;
+        height:inherit;
+    }
+
+    body {
+    padding-top: 25px;
     }
 }
