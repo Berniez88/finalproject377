@@ -12,8 +12,7 @@ When registering for classes, UMD students end up needing to access many differe
 * Macbook Pro 13/15
 
 ## Links
-* [User and Developer Manual](https://scheduleofpt.herokuapp.com/documentation.html)
-*  Developer Manual can also be viewed below.
+* [User and Developer Manual](https://scheduleofpt.herokuapp.com/documentation.html) (Developer Manual can also be viewed below)
 
 # Developer Manual
 ## How to install application and all dependencies
