@@ -1,7 +1,6 @@
 document.body.addEventListener('submit', async (e) => {
     e.preventDefault(); // this stops whatever the browser wanted to do itself.
     const form = $(e.target).serializeArray();
-    console.log(form);
     const toReq = { "profName": form[0].value }
 
     fetch('/profapi', {
@@ -13,8 +12,6 @@ document.body.addEventListener('submit', async (e) => {
     })
         .then((fromServer) => fromServer.json())
         .then((fromServer) => {
-            console.log('fromServer', fromServer.reviews);
-
 
             $('.search-results').empty();
 
@@ -54,7 +51,7 @@ document.body.addEventListener('submit', async (e) => {
                     review = curr.review;
                 }
 
-
+                // return html
                 return `       
                 <div class="col mb-4">
                 <div class="card review">

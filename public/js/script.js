@@ -25,42 +25,6 @@ function calcCourseAvg(profgradesbase) {
 };
 
 
-
-/*function calcProfAvgs(profgradesbase) {
-    let profNames = [];
-    let profGPA = [];
-    let counter = [];
-
-
-    const gradesobj = { 'A+': 4, 'A': 4, 'A-': 3.7, 'B+': 3.3, 'B': 3, 'B-': 2.7, 'C+': 2.3, 'C': 2, 'C-': 1.7, 'D+': 1.3, 'D': 1, 'D-': 0.7, 'F': 0 };
-    profgradesbase.forEach(object => {
-        let gpa = 0;
-        for (const grade in object) {
-            if (gradesobj.hasOwnProperty(grade)) {
-                gpa += (gradesobj[grade] * object[grade]);
-            };
-        };
-
-        if (!profNames.includes(object.professor)) {
-            profNames.push(object.professor);
-            profGPA.push(gpa);
-            counter.push(1);
-        } else {
-            const profIndex = profNames.indexOf(object.professor);
-            profGPA[profIndex] += gpa;
-            counter[profIndex] += 1;
-        }
-
-        console.log(profGPA);
-        console.log(profNames);
-
-    });
-
-
-    return profGPA;
-};*/
-
-
 // Get average GPA of the course
 async function getGPA(course) {
     const courseObj = { "course": course };
@@ -77,7 +41,6 @@ async function getGPA(course) {
         });
 
         const profgradesbase = await data.json();
-        console.log(profgradesbase);
 
         const course_avg = calcCourseAvg(profgradesbase);
 
@@ -113,10 +76,6 @@ async function getClasses() {
         };
 
 
-
-        //console.log('courseGPA', courseGPA);
-
-
         // for each form data, search for matches in classbase. only add unique classes.
         // Return: list of matching classes
         function findMatches(formData) {
@@ -132,7 +91,6 @@ async function getClasses() {
                     return curr.course_id === formData.department_input.concat(formData.course_no_input);
                 });
             }
-            //console.log(matchList);
             return matchList;
         }
 
@@ -150,8 +108,6 @@ async function getClasses() {
 
             // get sections
             const sections = curr.sections;
-            //console.log(sections);
-
             let sectionsHTML = ``;
 
             sections.forEach(section => {
@@ -245,6 +201,5 @@ async function getClasses() {
     }
 
 
-    // details onclick
-}// getData() end
+}// getData()
 
