@@ -25,11 +25,23 @@ Our final project consists of two APIs. One from PlanetTerp and the other is umd
 
 ### Chosen Strategies and Solutions:
 
+One major issue UMD students face when scheduling courses is the lack of information that Testudo has to offer. The website itself only tells us what courses are open and what professors are teaching them. We wanted to solve this issue by condensing what we think is crucial which is why we used PlanetTerp and UMD.io. We included student reviews along with having an average GPA calculator to allow students to get a general idea of how difficult a course maybe. This way students will be able to get a varied amount of opinions from previous/current students. Another factor that we considered was GPA since some core courses require a C or higher students making students more inclined to register for a professor that has a high average grade. The greatest way to approach the issue was to make everything in our Schedule search tab to allow students to navigate between courses and professor reviews with only a few clicks.
+
 ### Technical System Decision Rationale:
+
+In order to make technical system decisions as a team, we were able to split up the work amongst team members by programming language. We had two members working on JS and three members working on HTML/CSS. Programming languages were selected by team members based on experience and proficiency in the language. 
+	
+In order to collaborate on this web application through a virtual setting, a GitHub repository was set up with the team members as its collaborators, and meetings through Zoom allowed for communication. Two breakout rooms were formed (one for JS, one for HTML/CSS), so we could work together in our respective programming language groups.
 
 ### How Schedule of Planet Terps Helps:
 
+Schedule of Planet Terps is a single web application that offers information from multiple different online sources. The simplicity of having course listings (section, professor, description, etc.), average course GPA, and professor reviews all in one place helps UMD students create the best course schedules. It creates more convenience and awareness for all the types of information registering students can consult.
+
 ### Challenges Faced and Impact on Final Design:
 
+The main challenge during the construction of this web application was navigating around the two API’s selected (UMD.io and Planet Terp). There were challenges surrounding the navigation of the API’s because we were unsure what we were able to do and not do. Specifically, we were having issues getting average ratings for professors through the Planet Terp API. This impacted the final design on content as we focused on individual reviews and ratings rather than overall. The layout became simpler as a result of only professor reviews being presented through card boxes.
+
 ### Possible Future Work Directions with This Problem:
+
+In terms of potential future work, there are a few things we would like to incorporate. The first thing would be the addition of class times that the user could view and build their schedule off of. Continuing off of this, the second thing we would like to add is a calendar that users can input course sections into so they can visualize their daily schedule. Third, we can implement a grade distribution graph, along with adding an average rating out of 5 stars for each professor. These methods will give students more visualizations and ways to help register for classes.
 
