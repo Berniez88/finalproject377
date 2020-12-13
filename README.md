@@ -7,14 +7,12 @@ When registering for classes, UMD students end up needing to access many differe
 [https://scheduleofpt.herokuapp.com/](https://scheduleofpt.herokuapp.com/)
 
 ## Target Browsers
-iPhone 6/7/8 Plus
-Pixel 2/2XL
-Macbook Pro 13/15
+* iPhone 6/7/8 Plus
+* Pixel 2/2XL
+* Macbook Pro 13/15
 
 ## Links
-[User Manual](https://scheduleofpt.herokuapp.com/documentation.html)
-[Documentation Manual](/README.md#Developer Manual)
-
+* [User Manual](https://scheduleofpt.herokuapp.com/documentation.html)
 
 
 # Developer Manual
