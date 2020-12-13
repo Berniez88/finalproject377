@@ -38,7 +38,7 @@ h1 {
 @media screen and (max-width: 500px) {
 
     .container {
-        flex-wrap: wrap;
+        flex-direction:column;
     }
 
     .wrapper {
@@ -57,7 +57,7 @@ h1 {
 
     .left ul {
         width:inherit;
-        padding-left: 25px
+        padding-left: 12px
     }
        
     .left img {
@@ -68,6 +68,21 @@ h1 {
 }
 
 @media screen and (max-width: 1280px) {
+
+    h1 {
+        text-align:center;
+    }
+
+    .right {
+        padding-left: 100px;
+    }
+
+    .right p {
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 1800px) {
 
     h1 {
         text-align:center;
