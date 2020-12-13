@@ -37,7 +37,7 @@ app.route('/api')
   })
   .put(async (req, res) => {
     console.log('PUT request detected');
-    res.send('No Data to update.');
+    res.send('Got a PUT request at /api');
   });
 
 
@@ -62,7 +62,7 @@ app.route('/profapi')
   })
   .put(async (req, res) => {
     console.log('PUT request detected');
-    res.send('No Data to update.');
+    res.send('Got a PUT request at /profapi');
   });
 
 
