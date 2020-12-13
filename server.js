@@ -22,9 +22,8 @@ app.use((req, res, next) => {
 
 app.route('/api')
   .get(async (req, res) => {
-    console.log('GET request detected');
     console.log('Get:', req.query);
-    res.send('/api route');
+    res.send('Got a GET request from /api');
   })
   .post(async (req, res) => {
     console.log('server req:', req.body.course);
@@ -36,7 +35,6 @@ app.route('/api')
     console.log('fetch request data', data);
   })
   .put(async (req, res) => {
-    console.log('PUT request detected');
     res.send('Got a PUT request at /api');
   });
 
@@ -44,7 +42,6 @@ app.route('/api')
 
 app.route('/profapi')
   .get(async (req, res) => {
-    console.log('GET request detected');
     console.log('Query:', req.query);
     res.send('/profapi route');
   })
@@ -61,7 +58,6 @@ app.route('/profapi')
     console.log('fetch request data', data);
   })
   .put(async (req, res) => {
-    console.log('PUT request detected');
     res.send('Got a PUT request at /profapi');
   });
 
