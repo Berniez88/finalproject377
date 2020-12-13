@@ -14,6 +14,15 @@ h1 {
     flex-direction: row;
 }
 
+body {
+    background-color: #AEB4A9 !important;
+}
+
+html {
+    -webkit-text-stroke-width: .2px;
+    -webkit-text-stroke-color: black;
+}
+
 .torso {
     padding: 10px;
 }
@@ -29,4 +38,21 @@ h1 {
     width: 100%;
     text-align: center;
     padding: 20px;
+}
+
+
+.search-results {
+    color: black;
+    background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 5px,
+    #007bff 10px,
+    #AEB4A9 20px
+  ),
+  linear-gradient(
+    to bottom,
+    #eee,
+    #007bff
+  )
 }
