@@ -22,6 +22,10 @@ h1 {
     flex-direction: row;
 }
 
+.h5 {
+    justify-content: center;
+}
+
 .left, .header {
     -webkit-text-stroke-width: .25px;
     -webkit-text-stroke-color: black;
