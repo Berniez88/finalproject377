@@ -22,8 +22,10 @@ h1 {
     flex-direction: row;
 }
 
-.h5 {
+h5 {
     justify-content: center;
+    display: flex;
+    flex-direction: row;
 }
 
 .left, .header {
