@@ -39,70 +39,109 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link active" id="pills-courses-tab" data-toggle="pill" href="#pills-courses" role="tab" 
-                aria-controls="pills-courses" aria-selected="false">Courses</a>
+                aria-controls="pills-courses" aria-selected="false">User Manual</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" id="pills-prof-tab" data-toggle="pill" href="#pills-prof" role="tab" 
-                aria-controls="pills-prof" aria-selected="false">Professors</a>
+                aria-controls="pills-prof" aria-selected="false">Developer Manual</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" id="pills-grades-tab" data-toggle="pill" href="#pills-grades" role="tab" 
-                aria-controls="pills-grades" aria-selected="false">Grades</a>
-                </li>
             </ul>
         </div>
 
         <div class="right" id="pills-tab-content">
           <div class="tab-pane fade show active" id="pills-intro" role="tabpanel" aria-labelledby="pills-introduction">
-            <h5>Introduction Filler Content</h5>  
-              <p>The purpose of our project is to aid students on deciding on what courses to take, and with who. 
-              Often not a lot of students have a difficult time deciding on what course to take. Factors such 
-              as average grades received in the class, amount of homework given level of difficulty, along with 
-              comments for each professor is beneficial when selecting what courses to take. Our goal is to 
-              combine all these factors into one platform, making it easier for students to decide on how they
-              want to be taught. We want to have these statistics (grade average, rating of the courses, 
-              level of difficulty, etc.) all posted next to the specified course and professor. This way 
-              students know what they’re getting themselves into, without needing to worry about the professor
-              over assigning work or explaining work poorly.</p>
+            <h5>Introduction</h5>  
+              <p>When registering for classes, UMD students end up needing to access many different online resources to obtain information on available classes, professor ratings and class difficulty. To address this issue of scattered information, we developed a website that combines course  information, course GPA and professor reviews into a single easy to use resource. Our website draws data from UMD.io and PlanetTerp APIs to create a  tool that makes class scheduling more efficient.</p>
           </div>
 
           <div class="tab-pane fade show active" id="pills-courses" role="tabpanel" aria-labelledby="pills-courses-tab">
-            <h5>Courses Filler Content</h5>
-            <p>The purpose of our project is to aid students on deciding on what courses to take, and with who. 
-              Often not a lot of students have a difficult time deciding on what course to take. Factors such 
-              as average grades received in the class, amount of homework given level of difficulty, along with 
-              comments for each professor is beneficial when selecting what courses to take. Our goal is to 
-              combine all these factors into one platform, making it easier for students to decide on how they
-              want to be taught. We want to have these statistics (grade average, rating of the courses, 
-              level of difficulty, etc.) all posted next to the specified course and professor. This way 
-              students know what they’re getting themselves into, without needing to worry about the professor
-              over assigning work or explaining work poorly.</p>
+            <h4>User Manual</h4>
+            <h5>Home</h5>
+              <p>Use the home page to navigate our web application. The main navigation consists of schedule search, documentation, and about.</p>
+            <h5>Schedule Search</h5>
+              <p>Search for course listings (sections, time, professor, etc.), average course GPA, and professor reviews on this page. You can use the “All Courses” tab to find information on courses, and “Professor Reviews” to find information on professors.</p>
+            <h5>All Courses</h5>
+              <p>Use the search forms provided (department, course, term) to input the types of courses you would like to find more information on. Results will show up in card boxes where the user can click on to view more details. Information such as average course GPA, course description, and section number will be presented.</p>
+            <h5>Professor Reviews</h5>
+              <p>Use the search form provided for searching professors by name in order to read individual reviews and ratings posted on the Planet Terp website. You can view the courses this professor has taught, expected grade, date posted, and a written review.</p>
           </div>
 
           <div class="tab-pane fade show active" id="pills-prof" role="tabpanel" aria-labelledby="pills-prof-tab">
-            <h5>Professors Filler Content</h5>
-            <p>The purpose of our project is to aid students on deciding on what courses to take, and with who. 
-              Often not a lot of students have a difficult time deciding on what course to take. Factors such 
-              as average grades received in the class, amount of homework given level of difficulty, along with 
-              comments for each professor is beneficial when selecting what courses to take. Our goal is to 
-              combine all these factors into one platform, making it easier for students to decide on how they
-              want to be taught. We want to have these statistics (grade average, rating of the courses, 
-              level of difficulty, etc.) all posted next to the specified course and professor. This way 
-              students know what they’re getting themselves into, without needing to worry about the professor
-              over assigning work or explaining work poorly.</p>
-          </div>
+            <h4>Developer Manual</h4>
+            <h5>How to install application and all dependencies</h5>
+              <p>
+                 1. Clone this repository through Github Desktop or through Terminal
+              </p>
+              <p>
+                2. Open repository in VSCode Terminal or Terminal application
+              </p>
+              <p>
+                3. type ```npm install``` into terminal window and run.
+              </p>
+              <p>
+                4. The application should now be set to run.
+              </p>
 
-          <div class="tab-pane fade show active" id="pills-grades" role="tabpanel" aria-labelledby="pills-grades-tab"> 
-          <h5>Grades Filler Content</h5>
-          <p>The purpose of our project is to aid students on deciding on what courses to take, and with who. 
-            Often not a lot of students have a difficult time deciding on what course to take. Factors such 
-            as average grades received in the class, amount of homework given level of difficulty, along with 
-            comments for each professor is beneficial when selecting what courses to take. Our goal is to 
-            combine all these factors into one platform, making it easier for students to decide on how they
-            want to be taught. We want to have these statistics (grade average, rating of the courses, 
-            level of difficulty, etc.) all posted next to the specified course and professor. This way 
-            students know what they’re getting themselves into, without needing to worry about the professor
-            over assigning work or explaining work poorly.</p>
+            <h5>How to run application on a server</h5>
+              <p>
+                 1. Open repository in VSCode terminal or Terminal application
+              </p>
+              <p>
+                2. Run ```npm start```. There should be no errors.
+              </p>
+              <p>
+                3. In a web browser, go to url: ```http://localhost:3000/```
+              </p>
+
+            <h5>To run tests for software</h5>
+              <p>
+                The are no prewritten tests in the source repository, but you can use Cypress to run your own written tests.
+              </p>
+              <p>
+                1. Open two terminals and make sure you are in the main project directory
+              </p>
+              <p>
+                2. In the first terminal, run ```npm start```
+              </p>
+              <p>
+                3. In the second terminal run ```npm test```
+              </p>
+
+            <h5>Server application APIs</h5>
+              <p>
+                ```/api``` - API route for course grades and GPA data.
+                GET - Logs to console response query from URL. returns response 'Got a GET request from /api'.
+                POST - obtains course name from request body to fetch url. fetch data json from PlanetTerp grades API and returns JSON response. 
+                PUT - returns response 'Got a PUT request at /api'.
+              </p>
+              <p>
+                ```/profapi``` - API route for professor reviews data.
+                GET - Logs to console response query from URL. returns response 'Got a GET request from /api'.
+                POST - obtains professor name from request body to fetch url. fetch data json from PlanetTerp professors API and returns JSON response. 
+                PUT - returns response 'Got a PUT request at /api'.
+              </p>
+
+            <h5>Bugs:</h5>
+              <p>
+                - There may be null values in the course and professor reviews data that may need to be handled. 
+              </p>
+
+            <h5>Future Development:</h5>
+              <p>
+                - Handle null values in course and professor reviews data.
+              </p>
+              <p>
+                - Adding data for more semesters; Spring 2021.
+              </p>
+              <p>
+                - Diplaying average GPA in course details by professor.
+              </p>
+              <p>
+                - Displaying average professor rating in professor reviews search.
+              </p>
+              <p>
+                - Adding more ways to filter courses.
+              </p>
           </div>
         </div>
       </div>
