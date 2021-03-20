@@ -2,6 +2,7 @@
 
 ## Description
 When registering for classes, UMD students end up needing to access many different online resources to obtain information on available classes, professor ratings and class difficulty. To address this issue of scattered information, we developed a website that combines course  information, course GPA and professor reviews into a single easy to use resource. Our website draws data from UMD.io and PlanetTerp APIs to create a  tool that makes class scheduling more efficient.
+![image](https://user-images.githubusercontent.com/58304673/111857924-4dedae80-890b-11eb-8443-cdf84f008491.png)
 
 ## Link to Website
 [https://scheduleofpt.herokuapp.com/](https://scheduleofpt.herokuapp.com/)
